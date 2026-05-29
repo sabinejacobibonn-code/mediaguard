@@ -1,0 +1,17 @@
+package com.mediaguard.service
+
+import android.content.BroadcastReceiver
+import android.content.Context
+import android.content.Intent
+import android.provider.Settings
+
+class BootReceiver : BroadcastReceiver() {
+    override fun onReceive(context: Context, intent: Intent?) {
+        if (intent?.action == Intent.ACTION_BOOT_COMPLETED) {
+            // Nach Reboot Overlay starten wenn Berechtigung vorhanden
+            if (Settings.canDrawOverlays(context)) {
+                OverlayService.start(context)
+            }
+        }
+    }
+}
