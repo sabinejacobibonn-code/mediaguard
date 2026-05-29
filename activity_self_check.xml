@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="#1E1E1E">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Kurzer Selbst-Check"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Wie geht es dir gerade wirklich?"
+        android:textColor="#888888"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Emotionaler Zustand -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Emotionaler Zustand"
+        android:textColor="#CCCCCC"
+        android:textSize="14sp"
+        android:layout_marginBottom="4dp" />
+
+    <TextView
+        android:id="@+id/tvEmotionalLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="😌 Ruhig & entspannt"
+        android:textColor="#FFD700"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp" />
+
+    <SeekBar
+        android:id="@+id/seekEmotional"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:progress="20"
+        android:layout_marginBottom="20dp" />
+
+    <!-- Energielevel -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Energielevel"
+        android:textColor="#CCCCCC"
+        android:textSize="14sp"
+        android:layout_marginBottom="4dp" />
+
+    <TextView
+        android:id="@+id/tvEnergyLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="😐 Müde"
+        android:textColor="#4CAF50"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp" />
+
+    <SeekBar
+        android:id="@+id/seekEnergy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="100"
+        android:progress="30"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Buttons -->
+    <Button
+        android:id="@+id/btnSelfCheckDone"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="✓ Speichern"
+        android:backgroundTint="#2E7D32"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="8dp" />
+
+    <Button
+        android:id="@+id/btnSelfCheckCancel"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="Abbrechen"
+        android:backgroundTint="#333333"
+        android:textColor="#FFFFFF" />
+
+</LinearLayout>

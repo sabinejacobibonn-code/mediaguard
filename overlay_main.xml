@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- overlay_main.xml – Das schwebende Fenster über anderen Apps -->
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/overlayCard"
+    android:layout_width="220dp"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="8dp"
+    app:cardBackgroundColor="#E8000000">
+
+    <!-- MINIMIERT: Nur Badge -->
+    <LinearLayout
+        android:id="@+id/layoutMinimized"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tvMiniBadge"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:background="@drawable/circle_badge"
+            android:text="?" />
+    </LinearLayout>
+
+    <!-- AUSGEKLAPPT: Vollständige Ansicht -->
+    <LinearLayout
+        android:id="@+id/layoutExpanded"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <!-- Header: Titel + Toggle-Button -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="🛡 MediaGuard"
+                android:textColor="#FFFFFF"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnToggle"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:text="–"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:background="#33FFFFFF"
+                android:padding="0dp" />
+
+            <Button
+                android:id="@+id/btnClose"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:text="✕"
+                android:textColor="#FF5555"
+                android:textSize="11sp"
+                android:background="#33FFFFFF"
+                android:padding="0dp"
+                android:layout_marginStart="4dp" />
+        </LinearLayout>
+
+        <!-- Trennlinie -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#33FFFFFF"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp" />
+
+        <!-- Status-Zeile -->
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Analysiere..."
+            android:textColor="#BBFFFFFF"
+            android:textSize="10sp"
+            android:layout_marginBottom="6dp" />
+
+        <!-- Manipulations-Score -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="MANIPULATION"
+            android:textColor="#88FFFFFF"
+            android:textSize="9sp"
+            android:letterSpacing="0.1" />
+
+        <TextView
+            android:id="@+id/tvManipScore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="–/100"
+            android:textColor="#FF9800"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <ProgressBar
+            android:id="@+id/progressManip"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:progress="0"
+            android:max="100"
+            android:layout_marginBottom="8dp"
+            android:progressBackgroundTint="#33FFFFFF"
+            android:progressTint="#FF9800" />
+
+        <!-- Vulnerabilitäts-Score -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="VULNERABILITÄT"
+            android:textColor="#88FFFFFF"
+            android:textSize="9sp"
+            android:letterSpacing="0.1" />
+
+        <TextView
+            android:id="@+id/tvVulnScore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="–/100"
+            android:textColor="#4CAF50"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <ProgressBar
+            android:id="@+id/progressVuln"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="6dp"
+            android:progress="0"
+            android:max="100"
+            android:layout_marginBottom="8dp"
+            android:progressBackgroundTint="#33FFFFFF"
+            android:progressTint="#4CAF50" />
+
+        <!-- Trennlinie -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#22FFFFFF"
+            android:layout_marginBottom="6dp" />
+
+        <!-- Zeit + Bot-Verdacht -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvAppTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="⏱ 0m 0s"
+                android:textColor="#BBFFFFFF"
+                android:textSize="11sp" />
+
+            <TextView
+                android:id="@+id/tvBotSuspect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="👤 menschlich"
+                android:textColor="#4CAF50"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <!-- Reflexionsfrage -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            android:background="#1AFFFFFF"
+            android:padding="6dp">
+
+            <TextView
+                android:id="@+id/tvReflection"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Geht es dir besser?"
+                android:textColor="#FFD700"
+                android:textSize="11sp"
+                android:textStyle="italic" />
+
+            <Button
+                android:id="@+id/btnNextQuestion"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:text="↻"
+                android:textColor="#FFD700"
+                android:textSize="11sp"
+                android:background="@android:color/transparent"
+                android:padding="0dp" />
+        </LinearLayout>
+
+        <!-- Aktions-Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="6dp">
+
+            <Button
+                android:id="@+id/btnSelfCheck"
+                android:layout_width="0dp"
+                android:layout_height="32dp"
+                android:layout_weight="1"
+                android:text="Selbst-Check"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp"
+                android:background="#334CAF50"
+                android:layout_marginEnd="4dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
