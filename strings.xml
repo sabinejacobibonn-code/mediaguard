@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MediaGuard</string>
+    <string name="accessibility_service_label">MediaGuard – Manipulationsschutz</string>
+    <string name="accessibility_service_description">MediaGuard analysiert Inhalte in Social-Media-Apps auf Manipulationsmuster und zeigt Hinweise im Overlay an.</string>
+</resources>
